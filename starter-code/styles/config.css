@@ -1,0 +1,240 @@
+/* Reset */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	line-height: 1.5;
+	min-height: 100vh;
+	font-family: var(--body-text);
+	color: hsl(var(--clr-white));
+	background-color: hsl(var(--clr-dark));
+}
+
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+	font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
+
+/* Utilities */
+.flex {
+	display: flex;
+	gap: var(--gap, 1rem);
+}
+.grid {
+	display: grid;
+	gap: var(--gap, 1rem);
+}
+
+.container {
+	padding: 0 2em;
+	max-width: 80rem;
+	margin: 0 auto;
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+.flow > * + * {
+	margin-top: 1rem;
+}
+
+/* Custome Properties */
+
+:root {
+	--clr-dark: 230°, 35%, 7%;
+	--clr-light: 231°, 77%, 90%;
+	--clr-white: 0°, 0%, 100%;
+	--main-text: "Bellefair", serif;
+	--secondary-text: "Barlow Condensed", sans-serif;
+	--body-text: "Barlow", sans-serif;
+}
+
+/* Text style */
+.heading-1 {
+	font-family: var(--main-text);
+	font-size: 150px;
+}
+.heading-2 {
+	font-family: var(--main-text);
+	font-size: 100px;
+}
+.heading-3 {
+	font-family: var(--main-text);
+	font-size: 56px;
+}
+.heading-4 {
+	font-family: var(--main-text);
+	font-size: 32px;
+}
+.heading-5 {
+	font-family: var(--secondary-text);
+	font-size: 28px;
+	letter-spacing: 4.75;
+}
+.subheading-1 {
+	font-family: var(--main-text);
+	font-size: 28px;
+}
+.subheading-2 {
+	font-family: var(--secondary-text);
+	font-size: 14px;
+	letter-spacing: 2.35;
+}
+.nav-text {
+	font-family: var(--secondary-text);
+	font-size: 16px;
+	letter-spacing: 2.7;
+}
+
+.numbered-title span {
+	margin-right: 0.5em;
+	font-weight: 700;
+	color: hsl(var(--clr-white) / 0.25);
+}
+
+/* Colors */
+
+.bg-dark {
+	background-color: hsl(var(--clr-dark));
+}
+.bg-light {
+	background-color: hsl(var(--clr-light));
+}
+.bg-white {
+	background-color: hsl(var(--clr-white));
+}
+
+.text-dark {
+	color: hsl(var(--clr-dark));
+}
+.text-light {
+	color: hsl(var(--clr-light));
+}
+.text-white {
+	color: hsl(var(--clr-white));
+}
+
+/* Components */
+
+.large-button {
+	padding: 0 2em;
+	display: grid;
+	aspect-ratio: 1;
+	text-decoration: none;
+	place-items: center;
+	border-radius: 50%;
+	position: relative;
+	z-index: 1;
+}
+
+.large-button::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	z-index: -1;
+	background-color: hsl(var(--clr-white) / 0.15);
+	transition: all 500ms ease-in-out;
+	opacity: 0;
+}
+
+.large-button:hover::before {
+	transform: scale(1.5);
+	opacity: 1;
+}
+
+.border-bottom > * {
+	padding: var(--underline-gap, 1rem) 0;
+	border: 0;
+	cursor: pointer;
+	border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+}
+
+.border-bottom > *:hover {
+	border-color: hsl(var(--clr-white) / 0.5);
+}
+
+.border-bottom > .active,
+.border-bottom > [aria-selected="true"] {
+	color: hsl(var(--clr-white) / 1);
+	border-color: hsl(var(--clr-white) 1);
+}
+
+.dots > * {
+	cursor: pointer;
+	border: 0;
+	border-radius: 50%;
+	aspect-ratio: 1;
+	padding: 0.5em;
+	background-color: hsl(var(--clr-white) / 0.25);
+}
+
+.dots > *:hover {
+	background-color: hsl(var(--clr-white) / 0.5);
+}
+
+.dots > [aria-selected="true"] {
+	color: hsl(var(--clr-white) / 1);
+	border-color: hsl(var(--clr-white) 1);
+}
+
+.numbers > * {
+	color: hsl(var(--clr-white) / 1);
+	background-color: hsl(var(--clr-dark));
+	padding: 0.5em;
+	cursor: pointer;
+	border: 2px solid hsl(var(--clr-white) / 0.5);
+	border-radius: 50%;
+	aspect-ratio: 1;
+}
+
+.number > *:hover {
+	border-color: hsl(var(--clr-white) / 1);
+}
+.number > [aria-selected="true"] {
+	background-color: hsl(var(--clr-white));
+	color: hsl(var(--clr-dark));
+	border-color: hsl(var(--clr-white) / 1);
+}
