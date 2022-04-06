@@ -1,0 +1,125 @@
+.home {
+	background-image: url(../assets/home/background-home-mobile.jpg);
+}
+
+.destination {
+	background-image: url(../assets/destination/background-destination-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+	.destination {
+		background-position: center center;
+		background-image: url(../assets/destination/background-destination-tablet.jpg);
+	}
+}
+
+@media (min-width: 45rem) {
+	.destination {
+		background-image: url(../assets/destination/background-destination-desktop.jpg);
+	}
+}
+
+.grid-container--destination {
+	grid-template-areas:
+		"title"
+		"image"
+		"tabs"
+		"content";
+}
+
+.grid-container--destination > img {
+	grid-area: image;
+	max-width: 60%;
+}
+
+.grid-container--destination > .tabs {
+	grid-area: tabs;
+}
+
+.grid-container--destination > .destination-info {
+	grid-area: content;
+}
+
+.destination-meta {
+	flex-direction: column;
+	border-top: 1px solid hsl(var(--clr-white) / 0.1);
+	padding-top: 2.5rem;
+	margin-top: 2.5rem;
+}
+
+.crew {
+	background-image: url(../assets/crew/background-crew-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+	.crew {
+		background-position: center center;
+		background-image: url(../assets/crew/background-crew-tablet.jpg);
+	}
+}
+
+@media (min-width: 45rem) {
+	.crew {
+		background-image: url(../assets/crew/background-crew-desktop.jpg);
+	}
+}
+
+.technology {
+	background-image: url(../assets/technology/background-technology-mobile.jpg);
+}
+
+@media (min-width: 35rem) {
+	.technology {
+		background-position: center center;
+		background-image: url(../assets/technology/background-technology-tablet.jpg);
+	}
+}
+
+@media (min-width: 45rem) {
+	.technology {
+		background-image: url(../assets/technology/background-technology-desktop.jpg);
+	}
+}
+
+.grid-container--crew,
+.grid-container--technology {
+	padding: 0;
+	--flow-space: 2rem;
+	grid-template-areas:
+		"title"
+		"image"
+		"tabs"
+		"content";
+}
+
+.grid-container--crew > img,
+.grid-container--technology > img {
+	grid-area: image;
+	max-width: 60%;
+	border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+.grid-container--destination > img,
+.grid-container--crew > img {
+	max-width: 90%;
+}
+
+.grid-container--crew p {
+	padding: 1rem 2rem;
+}
+
+.grid-container--crew > .dot-indicators,
+.grid-container--technology > #number-tabs {
+	grid-area: tabs;
+}
+
+.grid-container--crew > .crew-details,
+.grid-container--technology > .technology-details {
+	grid-area: content;
+}
+
+.grid-container--technology > img {
+	max-width: 100vw;
+	width: 100vw;
+	height: auto;
+}

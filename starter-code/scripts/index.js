@@ -81,3 +81,23 @@ function hideContent(parent, content) {
 function showContent(parent, content) {
      parent.querySelector(content).classList.remove('hidden');
 }
+
+const launch = document.querySelector("#launch-image");
+const spaceport = document.querySelector("#spaceport-image");
+const capsule = document.querySelector("#capsule-image");
+
+window.onload = changeImage;
+window.addEventListener('resize', changeImage);
+
+function changeImage() {
+    let width = window.innerWidth;
+    if(width > 959){
+        launch.src = "assets/technology/image-launch-vehicle-portrait.jpg";
+        spaceport.src = "assets/technology/image-spaceport-portrait.jpg";
+        capsule.src = "assets/technology/image-space-capsule-portrait.jpg";
+    }else if(width < 959){
+        launch.src = "assets/technology/image-launch-vehicle-landscape.jpg";
+        spaceport.src = "assets/technology/image-spaceport-landscape.jpg";
+        capsule.src = "assets/technology/image-space-capsule-landscape.jpg";
+    }
+}

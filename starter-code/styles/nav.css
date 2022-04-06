@@ -1,0 +1,35 @@
+.main-nav {
+	list-style-type: none;
+	z-index: 100;
+	padding: 0;
+	background: hsl(var(--clr-dark) / 0.95);
+	--gap: clamp(1.5rem, 5vw, 3.5rem);
+	padding: 0 clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.main-nav a {
+	text-decoration: none;
+}
+.main-nav a span {
+	margin-right: 0.5rem;
+}
+
+.logo {
+	margin: 2rem clamp(1.5rem, 5vw, 3.5rem);
+}
+
+.header {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hamburger {
+	display: none;
+}
+
+@supports (backdrop-filter: blur(2rem)) {
+	.main-nav {
+		background-color: hsl(var(--clr-white) / 0.05);
+		backdrop-filter: blur(2rem);
+	}
+}
