@@ -18,23 +18,44 @@
   
   <title>Frontend Mentor | Space tourism website</title>
 </head>
-<body>
+<body class="home">
 
-  00 Home
-  01 Destination
-  02 Crew
-  03 Technology
+  <header class="header flex">
+    <div>
+      <img src="./assets/shared/logo.svg" alt="logo" class="logo">
+    </div>
 
-  So, you want to travel to
-  Space
-  Let’s face it; if you want to go to space, you might as well genuinely go to 
-  outer space and not hover kind of on the edge of it. Well sit back, and relax 
-  because we’ll give you a truly out of this world experience!
+    <div class="hamburger" aria-controls="nav-menu" aria-expanded="false"></div>
 
-  Explore
+    <nav>
+      <ul id="nav-menu" data-visible="false" class="main-nav border-bottom flex">
+        <li class="active"><a href="index.html" class="text-white nav-text uppercase"><span>01</span>home</a></li>
+        <li><a href="destination.html" class="text-white nav-text uppercase"><span>02</span>destination</a></li>
+        <li><a href="crew.html" class="text-white nav-text uppercase"><span>03</span>crew</a></li>
+        <li><a href="technology.html" class="text-white nav-text uppercase"><span>04</span>technology</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main id="main" class="grid-container grid-container--home">
+    <div>
+    <h5 class="heading-5 text-light uppercase">So, you want to travel to</h5>
+
+    <h1 class="heading-1 text-white uppercase">space</h1>
+
+    <p class="text-light">Let’s face it; if you want to go to space, you might as well genuinely go to 
+      outer space and not hover kind of on the edge of it. Well sit back, and relax 
+      because we’ll give you a truly out of this world experience!</p>
+    </div>
+    <div>
+    <a href="destination.html" class="large-button uppercase">explore</a>
+    </div>
+  
+  </main>
 
 </body>
 
 
-<script rel="./scripts/index.js"></script>
+<script src="./scripts/index.js"></script>
 </html>
