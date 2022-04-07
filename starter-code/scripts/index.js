@@ -1,3 +1,9 @@
+import '../styles/config.css'
+import '../styles/nav.css'
+import '../styles/layout.css'
+import '../styles/responsive.css'
+
+
 const nav =  document.querySelector('.main-nav');
 const hamburger = document.querySelector('.hamburger');
 
